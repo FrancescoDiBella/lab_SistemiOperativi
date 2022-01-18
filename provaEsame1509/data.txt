@@ -1,0 +1,7 @@
+cane:12
+valore:2020
+lol:56
+iolo:89
+mamma:98
+papa:89
+cacca:888

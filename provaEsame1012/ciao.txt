@@ -1,0 +1,39 @@
+Sistemi Operativi
+prova di laboratorio
+–  10  dicembre 2021  –
+Creare   un   programma  parallel-alpha-stats.c  in   linguaggio   C   che   accetti   invocazioni 
+sulla riga di comando del tipo:
+    parallel-alpha-stats <text-file>
+Il programma dovrà fondamentalmente leggere il file testuale specificato e fornire delle  
+statistiche di occorrenza delle 26 lettere dell'alfabeto per ogni riga e per l'intero file.
+Il programma una volta avviato si istanzierà in un processo che chiameremo P: questo al 
+suo avvio creerà 26+1 processi figli (L-1, ..., L-26, S). I processi L-i e P condivideranno un 
+segmento di memoria condiviso idoneo a contenere una singola riga del file di testo. I 
+processi L-i e S avranno accesso ad una coda di messaggi. Sarà necessario utilizzare due  
+semafori in modo opportuno.
+I ruoli dei vari processi saranno i seguenti:
+•il processo P dovrà inizialmente occuparsi di creare i processi figli e di predisporre  
+le strutture di IPC; poi, per ogni riga letta dal file specificato, il relativo contenuto  
+dovrà   essere   visualizzato   sullo   standard   output   e   poi   riversato   nel   segmento 
+condiviso per poi risvegliare attraverso un semaforo tutti i processi L-i; attraverso 
+l'altro semaforo il processo P dovrà passare alla riga successiva su indicazione del 
+processo S (vedi sotto);
+•ogni processo  L-i, idealmente associato all'i-esima lettera dell'alfabeto, una volta 
+risvegliato dal processo  P, dovrà analizzare l'intera riga contenuta nel segmento 
+condiviso e cercare il numero di istanze della stessa in modo  case-insensitive; alla 
+fine di tale analisi, il risultato (lettera, numero di occorrenze) dovrà essere inviato  
+al   processo  S;   lo   stesso   di   addormenterà   in   attesa   della   successiva   riga   da 
+analizzare;
+•il processo S collezionerà le informazioni statistiche inviate dai singoli processi L-i 
+e li visualizzerà per  riga  e sul file  totale (vedi esempio  dopo); lo stesso si dovrà 
+occupare   di   segnalare,   tramite   uno   dei   semafori,   al   processo  P  il   momento   di 
+passare alla successiva riga.
+I   processi   dovranno   terminare   correttamente   e   spontaneamente   alla   fine   dei   lavori, 
+liberando qualunque struttura persistente di IPC.
+Note: 
+•assumere una dimensione massima fissa per la riga del file di testo (almeno 2048 
+byte per il file di esempio);
+•per il controllo case-insensitive di due singoli char si possono usare  tolower()  o 
+toupper().
+
+Tempo: 2 ore e 10 minuti
