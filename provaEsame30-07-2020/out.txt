@@ -1,0 +1,17 @@
+Processo L: ana e' una parola palindroma
+Processo L: lol e' una parola palindroma
+Processo L: polilop e' una parola palindroma
+Processo L: ama e' una parola palindroma
+Processo L: caac e' una parola palindroma
+Processo L: Non e' una parola palindroma
+Processo L: Sms e' una parola palindroma
+Processo L: Oso e' una parola palindroma
+Processo L: Gag e' una parola palindroma
+Processo L: Pop e' una parola palindroma
+Processo L: Wow e' una parola palindroma
+Processo L: Bob e' una parola palindroma
+Processo L: Tot e' una parola palindroma
+Processo L: Otto e' una parola palindroma
+Processo L: Acca e' una parola palindroma
+Processo L: LOL e' una parola palindroma
+Processo L: calac e' una parola palindroma
